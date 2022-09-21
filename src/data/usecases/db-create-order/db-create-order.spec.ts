@@ -38,4 +38,16 @@ describe("DbCreateOrder", () => {
 
     expect(createSpy).toHaveBeenCalledWith(params);
   });
+
+  it("should throw if DbCreateOrderRepo throws", async () => {
+    const { sut, dbCreateOrderRepo } = makeSut();
+
+    const params: CreateOrderParams = mockCreateOrderParams();
+
+    jest.spyOn(dbCreateOrderRepo, "create").mockRejectedValueOnce(new Error());
+
+    const promise = sut.exec(params);
+
+    expect(promise).rejects.toThrow();
+  });
 });
