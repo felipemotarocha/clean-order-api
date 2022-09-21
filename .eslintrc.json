@@ -11,5 +11,8 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/method-signature-style": "off",
+    "@typescript-eslint/no-useless-constructor": "off"
+  }
 }
