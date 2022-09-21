@@ -1,17 +1,6 @@
-import { Order } from "@/domain/entities";
+import { DbCreateOrderRepoStub } from "@/data/test/mock-db-create-order-repo";
 import { CreateOrderParams } from "@/domain/usecases/create-order";
 import { DbCreateOrder } from "./db-create-order";
-import { DbCreateOrderRepo } from "./protocols";
-
-class DbCreateOrderRepoStub implements DbCreateOrderRepo {
-  async create(): Promise<Order> {
-    return {
-      id: "any_id",
-      products: [{ id: "any_id", name: "any_name", price: 200 }],
-      amount: 400,
-    };
-  }
-}
 
 describe("DbCreateOrder", () => {
   it("should return an Order on success", async () => {
