@@ -1,4 +1,7 @@
+import { Product } from "./product.entity";
+
 export interface Order {
   id: string;
-  productId: string;
+  products: Product[];
+  amount: number;
 }
