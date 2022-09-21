@@ -26,4 +26,16 @@ describe("DbCreateOrder", () => {
 
     expect(result).toEqual(mockOrder());
   });
+
+  it("should call DbCreateOrderRepo with correct values", async () => {
+    const { sut, dbCreateOrderRepo } = makeSut();
+
+    const params: CreateOrderParams = mockCreateOrderParams();
+
+    const createSpy = jest.spyOn(dbCreateOrderRepo, "create");
+
+    await sut.exec(params);
+
+    expect(createSpy).toHaveBeenCalledWith(params);
+  });
 });
