@@ -10,5 +10,5 @@ export interface CreateOrderParams {
 }
 
 export interface CreateOrderUseCase {
-  exec: (params: CreateOrderParams) => Order;
+  exec: (params: CreateOrderParams) => Promise<Order>;
 }

@@ -1,2 +1,2 @@
-export * from "./order.entity";
-export * from "./product.entity";
+export * from "./order";
+export * from "./product";
