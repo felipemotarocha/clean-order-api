@@ -3,7 +3,7 @@ import {
   CreateOrderParams,
   CreateOrderUseCase,
 } from "@/domain/usecases/create-order";
-import { HttpRequest, HttpResponse } from "../protocols/http";
+import { HttpRequest, HttpResponse, StatusCode } from "../protocols/http";
 
 export class CreateOrderController {
   constructor(private readonly createOrderUseCase: CreateOrderUseCase) {}
@@ -15,7 +15,7 @@ export class CreateOrderController {
 
     return {
       body: order,
-      statusCode: 200,
+      statusCode: StatusCode.ok,
     };
   }
 }

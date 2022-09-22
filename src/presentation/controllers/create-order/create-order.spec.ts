@@ -1,13 +1,7 @@
-import { Order } from "@/domain/entities";
+import { CreateOrderUseCaseStub } from "@/domain/test/mock-create-order";
 import { mockCreateOrderParams, mockOrder } from "@/domain/test/mock-order";
-import { CreateOrderUseCase } from "@/domain/usecases/create-order";
+import { StatusCode } from "../protocols/http";
 import { CreateOrderController } from "./create-order";
-
-class CreateOrderUseCaseStub implements CreateOrderUseCase {
-  async exec(): Promise<Order> {
-    return mockOrder();
-  }
-}
 
 describe("Create Order Controller", () => {
   it("should return 200 on Order creation success", async () => {
@@ -16,6 +10,6 @@ describe("Create Order Controller", () => {
     const response = await sut.exec({ body: mockCreateOrderParams() });
 
     expect(response.body).toEqual(mockOrder());
-    expect(response.statusCode).toBe(200);
+    expect(response.statusCode).toBe(StatusCode.ok);
   });
 });
