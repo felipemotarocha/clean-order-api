@@ -3,9 +3,10 @@ import {
   CreateOrderParams,
   CreateOrderUseCase,
 } from "@/domain/usecases/create-order";
+import { Controller } from "@/presentation/protocols/controller";
 import { HttpRequest, HttpResponse, StatusCode } from "../protocols/http";
 
-export class CreateOrderController {
+export class CreateOrderController implements Controller {
   constructor(private readonly createOrderUseCase: CreateOrderUseCase) {}
 
   async exec(
