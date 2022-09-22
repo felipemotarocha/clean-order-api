@@ -1,5 +1,5 @@
 import { mockCreateOrderParams, mockOrder } from "@/domain/test/mock-order";
-import { MongoHelper } from "../helpers/mongo-helper";
+import { MongoHelper } from "@/infra/helpers/mongo-helper";
 import { MongoCreateOrderRepo } from "./mongo-create-order-repo";
 
 describe("MongoCreateOrderRepo", () => {

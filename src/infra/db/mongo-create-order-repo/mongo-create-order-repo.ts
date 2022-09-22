@@ -1,7 +1,7 @@
 import { DbCreateOrderRepo } from "@/data/usecases/db-create-order/protocols";
 import { Order } from "@/domain/entities";
 import { CreateOrderParams } from "@/domain/usecases/create-order";
-import { MongoHelper } from "../helpers/mongo-helper";
+import { MongoHelper } from "@/infra/helpers/mongo-helper";
 
 export class MongoCreateOrderRepo implements DbCreateOrderRepo {
   async create(params: CreateOrderParams): Promise<Order> {
