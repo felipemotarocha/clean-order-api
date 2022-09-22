@@ -1,10 +1,17 @@
-import { CreateOrderUseCase } from "@/domain/usecases/create-order";
+import { Order } from "@/domain/entities";
+import {
+  CreateOrderParams,
+  CreateOrderUseCase,
+} from "@/domain/usecases/create-order";
+import { HttpRequest, HttpResponse } from "../protocols/http";
 
 export class CreateOrderController {
   constructor(private readonly createOrderUseCase: CreateOrderUseCase) {}
 
-  async exec(httpRequest: any): Promise<any> {
-    const order = await this.createOrderUseCase.exec(httpRequest.body);
+  async exec(
+    httpRequest: HttpRequest<CreateOrderParams>
+  ): Promise<HttpResponse<Order>> {
+    const order = await this.createOrderUseCase.exec(httpRequest.body!);
 
     return {
       body: order,
