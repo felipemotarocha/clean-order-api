@@ -8,6 +8,6 @@ export const mockCreateOrderParams = (): CreateOrderParams => ({
 
 export const mockOrder = (): Order => ({
   id: "any_id",
-  products: [{ id: "any_id", name: "any_name", price: 200 }],
+  products: [{ id: "any_id", name: "any_name", price: 200, quantity: 2 }],
   amount: 400,
 });

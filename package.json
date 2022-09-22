@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@shelf/jest-mongodb": "^4.1.0",
     "@types/jest": "^29.0.3",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "eslint": "^8.0.1",
@@ -35,5 +36,8 @@
     "tsc-alias": "^1.7.0",
     "tsconfig-paths": "^4.1.0",
     "typescript": "*"
+  },
+  "dependencies": {
+    "mongodb": "^4.10.0"
   }
 }

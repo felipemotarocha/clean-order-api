@@ -1,8 +1,4 @@
-import { Order, Product } from "@/domain/entities";
-
-export interface OrderProduct extends Pick<Product, "id" | "name" | "price"> {
-  quantity: number;
-}
+import { Order, OrderProduct } from "@/domain/entities";
 
 export interface CreateOrderParams {
   id: string;
