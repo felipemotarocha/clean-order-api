@@ -26,4 +26,16 @@ describe("MessengerCreateOrder", () => {
 
     expect(result).toEqual(mockOrder());
   });
+
+  it("should throw if MessengerCreateOrderRepo throws", () => {
+    const { sut, messengerCreateOrderRepo } = makeSut();
+
+    const createSpy = jest.spyOn(messengerCreateOrderRepo, "create");
+
+    createSpy.mockRejectedValueOnce(new Error());
+
+    const promise = sut.exec(mockCreateOrderParams());
+
+    expect(promise).rejects.toThrow();
+  });
 });
