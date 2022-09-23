@@ -1,4 +1,4 @@
-import { HttpRequest, HttpResponse } from "../controllers/protocols/http";
+import { HttpRequest, HttpResponse } from "./http";
 
 export interface Controller {
   exec(httpRequest: HttpRequest<unknown>): Promise<HttpResponse<unknown>>;
