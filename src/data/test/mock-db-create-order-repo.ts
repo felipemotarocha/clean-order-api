@@ -1,9 +1,7 @@
 import { Order } from "@/domain/entities";
 import { mockOrder } from "@/domain/test/mock-order";
-import {
-  DbCreateOrderRepo,
-  MessengerCreateOrderRepo,
-} from "../usecases/db-create-order/protocols";
+import { DbCreateOrderRepo } from "../usecases/db-create-order/protocols";
+import { MessengerCreateOrderRepo } from "../usecases/messenger-create-order/protocols";
 
 export const dbCreateOrderRepoMockResult = mockOrder();
 

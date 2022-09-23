@@ -3,7 +3,7 @@ import {
   CreateOrderParams,
   CreateOrderUseCase,
 } from "@/domain/usecases/create-order";
-import { MessengerCreateOrderRepo } from "../db-create-order/protocols";
+import { MessengerCreateOrderRepo } from "./protocols";
 
 export class MessengerCreateOrder implements CreateOrderUseCase {
   constructor(

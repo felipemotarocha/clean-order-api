@@ -1,8 +1,8 @@
 import { MessengerCreateOrderRepoStub } from "@/data/test/mock-db-create-order-repo";
 import { mockCreateOrderParams, mockOrder } from "@/domain/test/mock-order";
 import { CreateOrderParams } from "@/domain/usecases/create-order";
-import { MessengerCreateOrderRepo } from "../db-create-order/protocols";
 import { MessengerCreateOrder } from "./messenger-create-order";
+import { MessengerCreateOrderRepo } from "./protocols";
 
 interface SutTypes {
   sut: MessengerCreateOrder;
