@@ -38,6 +38,7 @@
     "typescript": "*"
   },
   "dependencies": {
+    "kafkajs": "^2.2.0",
     "mongodb": "^4.10.0"
   }
 }
